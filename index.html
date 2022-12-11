@@ -16,9 +16,6 @@
 
         function cacheFnct(fn) {
             return function () {
-                const cacheObject = {
-                    fnArguments: 0
-                }
                 arg = Array.from(arguments);
                 let findArgs = cache.find(function(el){
                     for (let i = 0; i < el.fnArguments.length; i++) {
@@ -33,6 +30,8 @@
                 else {
                     if (cache.length===5) {
                         cache.splice(0, 1);
+                    }
+                    const cacheObject = {
                     }
                     cacheObject.fnArguments = arg;
                     cacheObject.result = fn.apply(this, arg);
