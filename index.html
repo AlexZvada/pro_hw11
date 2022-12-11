@@ -28,11 +28,11 @@
                 });
 
                 if (findArgs) {
-                    return findArgs.result
+                    return findArgs.result;
                 }
                 else {
                     if (cache.length===5) {
-                        cache.splice(0, 1)
+                        cache.splice(0, 1);
                     }
                     cacheObject.fnArguments = arg;
                     cacheObject.result = fn.apply(this, arg);
